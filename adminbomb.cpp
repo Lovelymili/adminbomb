@@ -10,6 +10,8 @@
 
 #include <mutex>
 
+std::string userpath = "", passswordpash = "";
+
 //模式1:知道用户名破解密码 //模式2:知道密码破解用户名  纯暴力破解因为觉得这个方式过于不合适未加入
 std::string Boom_1(const std::string& BaseURL, const std::string& Path,int Port = 443,bool if_https)
 {
@@ -19,8 +21,8 @@ std::string Boom_1(const std::string& BaseURL, const std::string& Path,int Port 
         client.enable_server_certificate_verification(false);
         std::string user = "", pwd = "";
         std::ifstream inf1,inf2;
-        inf1.open("C://users.txt"); // 这里必须是双斜杠
-        inf2.open("C://password.txt"); //同上
+        inf1.open(userpath); 
+        inf2.open(passswordpash); 
         std::string user_id = user;
         while (std::getline(inf2, pwd))
         {
@@ -45,8 +47,8 @@ std::string Boom_1(const std::string& BaseURL, const std::string& Path,int Port 
         //client.enable_server_certificate_verification(false);
         std::string user = "", pwd = "";
         std::ifstream inf1, inf2;
-        inf1.open("C://users.txt"); // 这里必须是双斜杠
-        inf2.open("C://password.txt"); //同上
+        inf1.open(userpath); 
+        inf2.open(passswordpash); 
         std::string user_id = user;
         while (std::getline(inf2, pwd))
         {
@@ -76,8 +78,8 @@ std::string Boom_2(const std::string& BaseURL, const std::string& Path, int Port
         client.enable_server_certificate_verification(false);
         std::string user = "", pwd = "";
         std::ifstream inf1, inf2;
-        inf1.open("C://users.txt"); // 这里必须是双斜杠
-        inf2.open("C://password.txt"); //同上
+        inf1.open(userpath); 
+        inf2.open(passswordpash); 
         std::string password = pwd;
         while (std::getline(inf2, pwd))
         {
@@ -102,8 +104,8 @@ std::string Boom_2(const std::string& BaseURL, const std::string& Path, int Port
         //client.enable_server_certificate_verification(false);
         std::string user = "", pwd = "";
         std::ifstream inf1, inf2;
-        inf1.open("C://users.txt"); // 这里必须是双斜杠
-        inf2.open("C://password.txt"); //同上
+        inf1.open(userpath); 
+        inf2.open(passswordpash); 
         std::string user_id = user;
         while (std::getline(inf2, pwd))
         {
